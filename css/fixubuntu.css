@@ -1,0 +1,37 @@
+body {
+}
+
+#wrapper {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+h1 {
+  text-align: center;
+}
+
+#fixes {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#fixes .fix-button {
+  display: inline-block;
+  padding: 3px 12px;
+  margin: 3px;
+  cursor: pointer;
+  background-color: #999;
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+#fixes .fix-button.off {
+  background-color: #bbb;
+  color: #ffffff;
+}
+
+#cmd {
+  font-size: 30px;
+}
