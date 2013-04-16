@@ -10,18 +10,6 @@ $(function(){
     {
       name: 'turn off other online search',
       cmds: ['gsettings set com.canonical.Unity.Lenses remote-content-search none']
-    },
-    {
-      name: 'install gnome',
-      cmds: [
-        'sudo apt-get update',
-        'sudo apt-get install -y gnome-shell',
-        'sudo /usr/lib/lightdm/lightdm-set-defaults -s gnome'
-      ]
-    },
-    {
-      name: 'logout of unity',
-      cmds: ['sudo killall gnome-session']
     }
   ];
   
