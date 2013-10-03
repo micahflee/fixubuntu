@@ -9,7 +9,7 @@
   <body>
     <div id="wrapper">
       <h1>fix ubuntu</h1>
-      <code id="cmd"> sudo apt-get remove -y unity-lens-shopping; sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'; gsettings set com.canonical.Unity.Lenses remote-content-search none; </code>
+      <code id="cmd"> sudo apt-get remove -y unity-lens-shopping; sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'; gsettings set com.canonical.Unity.Lenses remote-content-search none</code>
       <p>Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.</p>
 
       <table id="details">
@@ -17,15 +17,15 @@
           <td colspan="2" id="header">What does this do?</td>
         </tr>
         <tr>
-          <td><code>sudo apt-get remove -y unity-lens-shopping;</code></td>
+          <td><code>sudo apt-get remove -y unity-lens-shopping</code></td>
           <td>Uninstalls Amazon ads built-in to Ubuntu</td>
         </tr>
         <tr>
-          <td><code>sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts';</code></td>
+          <td><code>sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'</code></td>
           <td>Blocks connections to Ubuntu's ad server, just in case</td>
         </tr>
         <tr>
-          <td><code>gsettings set com.canonical.Unity.Lenses remote-content-search none;</code></td>
+          <td><code>gsettings set com.canonical.Unity.Lenses remote-content-search none</code></td>
           <td>Turns off &quot;Remote Search&quot;, so search terms in Dash don't get sent to the internet</td>
         </tr>
       </table>
