@@ -49,3 +49,12 @@ h1 {
 #details td {
   padding: 10px;
 }
+
+a {
+  color: #999;
+}
+
+.more-info {
+  font-size: 11px;
+  text-align: right;
+}
