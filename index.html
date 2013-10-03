@@ -4,16 +4,32 @@
   <head>
     <title>Fix Ubuntu</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" href="css/fixubuntu.css" />
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/fixubuntu.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="wrapper">
-      <h1>Fix Ubuntu</h1>
-      <div id="fixes"></div>
-      <code id="cmd"></code>
-      <p id="description"><strong>Instructions:</strong> Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.</p>
+      <h1>fix ubuntu</h1>
+      <code id="cmd"> sudo apt-get remove -y unity-lens-shopping; sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'; gsettings set com.canonical.Unity.Lenses remote-content-search none; </code>
+      <p>Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.</p>
+
+      <table id="details">
+        <tr>
+          <td colspan="2" id="header">What does this do?</td>
+        </tr>
+        <tr>
+          <td><code>sudo apt-get remove -y unity-lens-shopping;</code></td>
+          <td>Uninstalls Amazon ads built-in to Ubuntu</td>
+        </tr>
+        <tr>
+          <td><code>sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts';</code></td>
+          <td>Blocks connections to Ubuntu's ad server, just in case</td>
+        </tr>
+        <tr>
+          <td><code>gsettings set com.canonical.Unity.Lenses remote-content-search none;</code></td>
+          <td>Turns off &quot;Remote Search&quot;, so search terms in Dash don't get sent to the internet</td>
+        </tr>
+      </table>
+
     </div>
   </body>
 </html>

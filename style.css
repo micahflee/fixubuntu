@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(ubuntu.woff) format('woff');
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Ubuntu;
+}
+
+#wrapper {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  background-image: url("ubuntu.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  padding: 0 110px 0 0;
+  display: inline-block;
+  min-height: 100px;
+  font-size: 85px;
+}
+
+#cmd {
+  font-size: 30px;
+  text-align: left;
+  padding: 20px;
+  margin: 0 50px 50px 50px;
+  border: 1px solid #333;
+  background-color: #111;
+  display: block;
+}
+
+#details {
+  margin: 50px auto;
+  text-align: left;
+  border: 1px solid #333;
+  background-color: #111;
+}
+#details #header {
+  text-align: center;
+  font-size: 20px;
+}
+#details td {
+  padding: 10px;
+}
