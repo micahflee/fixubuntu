@@ -27,13 +27,16 @@ h1 {
 }
 
 #cmd {
-  font-size: 30px;
+  font-size: 25px;
   text-align: left;
   padding: 20px;
   margin: 0 50px 50px 50px;
   border: 1px solid #333;
   background-color: #111;
   display: block;
+}
+#cmd pre {
+  overflow: auto;
 }
 
 #details {
@@ -57,4 +60,8 @@ a {
 .more-info {
   font-size: 11px;
   text-align: right;
+}
+
+td {
+  width: 50%;
 }

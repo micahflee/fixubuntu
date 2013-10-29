@@ -10,8 +10,8 @@
   <body>
     <div id="wrapper">
       <p>Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.</p>
-      <h1>fix ubuntu up to 13.04</h1>
-      <code id="cmd"> sudo apt-get remove -y unity-lens-shopping; sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'; gsettings set com.canonical.Unity.Lenses remote-content-search none</code>
+      <h1>fix ubuntu</h1>
+      <code id="cmd"> sudo apt-get remove -y unity-lens-shopping; sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'; if [ `cat /etc/lsb-release | grep DISTRIB_RELEASE | cut -d"=" -f2` \< '13.10' ]; then gsettings set com.canonical.Unity.Lenses remote-content-search none; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi</code>
       <table id="details">
         <tr>
           <td colspan="2" id="header">What does this do?</td>
@@ -25,13 +25,10 @@
           <td>Blocks connections to Ubuntu's ad server, just in case</td>
         </tr>
         <tr>
-          <td><code>gsettings set com.canonical.Unity.Lenses remote-content-search none</code></td>
-          <td>Turns off &quot;Remote Search&quot;, so search terms in Dash don't get sent to the internet</td>
+          <td><code>if [ `cat /etc/lsb-release | grep DISTRIB_RELEASE | cut -d"=" -f2` \< '13.10' ]; then gsettings set com.canonical.Unity.Lenses remote-content-search none; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi</code></td>
+          <td>Detects Ubuntu version and turns off &quot;Remote Search&quot;, so search terms in Dash don't get sent to the internet</td>
         </tr>
       </table>
-      <h1>fix ubuntu 13.10+</h1>
-      <!Source=http://www.webupd8.org/2013/10/how-to-disable-amazon-shopping.html>
-      <code id="cmd">gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"</code>
 
       <p class="more-info"><a href="https://www.eff.org/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks">What's wrong with Ubuntu?</a></p>
       <p class="more-info"><a href="https://github.com/micahflee/fixubuntu">Help improve this website.</a></p>
