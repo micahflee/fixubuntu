@@ -10,33 +10,53 @@
   <body>
     <div id="wrapper">
       <h1>fix ubuntu</h1>
-      <code id="cmd">gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ `cat /etc/lsb-release | grep DISTRIB_RELEASE | cut -d"=" -f2` \< '13.10' ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts';</code>
-      <p>Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.</p>
-      <table id="details">
-        <tr>
-          <td colspan="2" id="header">What does this do?</td>
-        </tr>
-        <tr>
-          <td><code>gsettings set com.canonical.Unity.Lenses remote-content-search none</code></td>
-          <td>Turns off &quot;Remote Search&quot;, so search terms in Dash don't get sent to the internet</td>
-        </tr>
-        <tr>
-          <td><code>gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"</code></td>
-          <td>Turns off other remote Dash scopes, just in case (for Ubuntu 13.10 and newer)</td>
-        </tr>
-        <tr>
-          <td><code>sudo apt-get remove -y unity-lens-shopping</code></td>
-          <td>Uninstalls Amazon ads built-in to Ubuntu (for Ubuntu 13.04 and older)</td>
-        </tr>
-        <tr>
-          <td><code>sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'</code></td>
-          <td>Blocks connections to Ubuntu's ad server, just in case</td>
-        </tr>
-      </table>
 
-      <p class="more-info"><a href="https://www.eff.org/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks">What's wrong with Ubuntu?</a></p>
-      <p class="more-info"><a href="https://github.com/micahflee/fixubuntu">Help improve this website.</a></p>
-      <p class="more-info"><a href="https://micahflee.com">Contact me.</a></p>
+      <div id="left">
+
+        <p class="center">Copy code. Open a terminal (Ctrl-Alt-T).<br>Paste code, press enter. Type password.<br>Enjoy your privacy.</p>
+        <code id="cmd">gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ `cat /etc/lsb-release | grep DISTRIB_RELEASE | cut -d"=" -f2` \< '13.10' ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts';</code>
+
+        <table id="details">
+          <tr>
+            <td colspan="2"><h2>What does this do?</h2></td>
+          </tr>
+          <tr class="even">
+            <td><code>gsettings set com.canonical.Unity.Lenses remote-content-search none</code></td>
+            <td>Turns off &quot;Remote Search&quot;, so search terms in Dash don't get sent to the internet</td>
+          </tr>
+          <tr class="odd">
+            <td><code>gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"</code></td>
+            <td>Turns off other remote Dash scopes, just in case (for Ubuntu 13.10 and newer)</td>
+          </tr>
+          <tr class="even">
+            <td><code>sudo apt-get remove -y unity-lens-shopping</code></td>
+            <td>Uninstalls Amazon ads built-in to Ubuntu (for Ubuntu 13.04 and older)</td>
+          </tr>
+          <tr class="odd">
+            <td><code>sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'</code></td>
+            <td>Blocks connections to Ubuntu's ad server, just in case</td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div id="right">
+        <h2>Why do we need this?</h2>
+        <p>If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.</p>
+        <p>Ubuntu should protect user privacy by default. Since it doesn't, you can use the code to the left to disable the privacy invasive parts of Ubuntu.</p>
+        <p><a href="https://www.eff.org/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks">Read more</a>.</p>
+
+        <div class="spacer"></div>
+
+        <p class="center"><a href="https://github.com/micahflee/fixubuntu">Github</a> &bull; <a href="https://micahflee.com/">Contact</a></p>
+
+        <div class="spacer"></div>
+
+        <p class="disclaimer"><strong>Disclaimer:</strong> In case you are either 1) a complete idiot; or 2) a lawyer; or 3) both, please be aware that this site is not affiliated with or approved by Canonical Limited. This site <em>critizes</em> Canonical for certain privacy-invading features of Ubuntu and teaches users how to fix them. So, obviously, the site not approved by Canonical. And our use of the trademarked term Ubuntu is plainly descriptive&mdash;it helps the public find and understand this site and its message.</p>
+
+      </div>
+
+      <div class="clear"></div>
 
     </div>
   </body>
