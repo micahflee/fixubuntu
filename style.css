@@ -76,7 +76,7 @@ td {
 }
 
 .spacer {
-  height: 100px;
+  height: 20px;
 }
 
 .disclaimer {
@@ -84,3 +84,13 @@ td {
   color: #f0f0f0;
 }
 
+ul#media {
+  list-style: none;
+  padding: 0;
+}
+ul#media li {
+  margin: 0 0 15px 0;
+}
+ul#media li a {
+  text-decoration: none;
+}
