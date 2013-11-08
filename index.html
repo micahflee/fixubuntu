@@ -14,7 +14,7 @@
       <div id="left">
 
         <p class="center">Copy code. Open a terminal (Ctrl-Alt-T).<br>Paste code, press enter. Type password.<br>Enjoy your privacy.</p>
-        <code id="cmd">gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ `cat /etc/lsb-release | grep DISTRIB_RELEASE | cut -d"=" -f2` \< '13.10' ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts';</code>
+        <code id="cmd">gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ "`/usr/bin/lsb_release -rs`" \< '13.10' ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; echo 127.0.0.1 productsearch.ubuntu.com | sudo tee -a /etc/hosts;</code>
 
         <table id="details">
           <tr>
@@ -33,7 +33,7 @@
             <td>Uninstalls Amazon ads built-in to Ubuntu (for Ubuntu 13.04 and older)</td>
           </tr>
           <tr class="odd">
-            <td><code>sudo sh -c 'echo "127.0.0.1 productsearch.ubuntu.com" &gt;&gt; /etc/hosts'</code></td>
+            <td><code>echo 127.0.0.1 productsearch.ubuntu.com | sudo tee -a /etc/hosts</code></td>
             <td>Blocks connections to Ubuntu's ad server, just in case</td>
           </tr>
         </table>
