@@ -6,7 +6,7 @@
 
 gsettings set com.canonical.Unity.Lenses remote-content-search none; 
 
-if [ "`/usr/bin/lsb_release -rs`" < 13.10 ]; then
+if [ "`/usr/bin/lsb_release -rs`" \< 13.10 ]; then
   sudo apt-get remove -y unity-lens-shopping; 
 else 
   gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; 
