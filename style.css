@@ -27,6 +27,8 @@ body {
 h1 {
   text-align: center;
   font-size: 85px;
+  line-height: 100%;
+  margin: 0;
 }
 
 #cmd {
@@ -79,3 +81,9 @@ ul#media li a {
   text-decoration: none;
 }
 
+@media (max-width: 600px) {
+  div#left, div#right {
+    width: 100%;
+    margin: 0;
+  } 
+}
