@@ -10,7 +10,6 @@ body {
   color: #ffffff;
   font-family: Ubuntu;
   line-height: 1.5em;
-  margin-bottom: 50px;
 }
 
 #left {
@@ -67,7 +66,8 @@ a {
 
 .disclaimer {
   font-size: 0.8em;
-  color: #f0f0f0;
+  color: #666;
+  padding: 20px;
 }
 
 ul#media {
