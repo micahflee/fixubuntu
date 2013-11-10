@@ -16,7 +16,7 @@ else
 
   # If you're using a later version, disable remote scopes
   else
-    gsettings set com.canonical.Unity.Lenses disabled-scopes 
+    gsettings set com.canonical.Unity.Lenses disabled-scopes \
       "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 
       'more_suggestions-populartracks.scope', 'music-musicstore.scope', 
       'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 
