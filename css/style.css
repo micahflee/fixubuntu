@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
-  font-weight: 400;
-  src: local('Ubuntu'), url(fonts/ubuntu.woff) format('woff');
+  font-weight: normal;
+  src: url(../fonts/ubuntu.woff) format('woff');
 }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: Ubuntu;
+  background-color: black;
+  color: white;
+  font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.5em;
 }
 
