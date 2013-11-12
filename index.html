@@ -18,7 +18,6 @@
     <!-- syntax highlighter -->
     <script src="lib/syntaxhighlighter/shCore.js"></script>
     <script src="lib/syntaxhighlighter/shBrushBash.js"></script>
-
   </head>
   <body>
     <div id="wrapper">
@@ -26,7 +25,9 @@
 
       <div id="left">
 
-        <p class="center">Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.</p>
+        <p class="center">
+          Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.
+        </p>
         <code id="cmd">V=`/usr/bin/lsb_release -rs`; if [ $V \&lt; 12.10 ]; then echo "Good news! Your version of Ubuntu doesn't invade your privacy."; else gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ $V \&lt; 13.10 ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; if ! grep -q productsearch.ubuntu.com /etc/hosts; then echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts >/dev/null; fi; echo "All done. Enjoy your privacy."; fi</code>
 
         <h2>What does this do?</h2>
@@ -69,9 +70,15 @@ fi
 
       <div id="right">
         <h2>Why do we need this?</h2>
-        <p>If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.</p>
-        <p>Ubuntu should protect user privacy by default. Since it doesn't, you can use the code to the left to disable the parts of Ubuntu which are invasive to your privacy.</p>
-        <p><a href="https://www.eff.org/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks">Read more</a>.</p>
+        <p>
+          If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.
+        </p>
+        <p>
+          Ubuntu should protect user privacy by default. Since it doesn't, you can use the code to the left to disable the parts of Ubuntu which are invasive to your privacy.
+        </p>
+        <p>
+          <a href="https://www.eff.org/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks">Read more</a>.
+        </p>
 
         <div class="spacer"></div>
 
@@ -86,7 +93,9 @@ fi
 
         <div class="spacer"></div>
 
-        <p class="center"><a href="https://github.com/micahflee/fixubuntu">Github</a> &bull; <a href="https://micahflee.com/">Contact</a></p>
+        <p class="center">
+          <a href="https://github.com/micahflee/fixubuntu">Github</a> &bull; <a href="https://micahflee.com/">Contact</a>
+        </p>
 
         <div class="spacer"></div>
 
@@ -94,14 +103,16 @@ fi
 
       <div class="clear"></div>
 
-      <p class="disclaimer"><strong>Disclaimer:</strong> In case you are either 1) a complete idiot; or 2) a lawyer; or 3) both, please be aware that this site is not affiliated with or approved by Canonical Limited. This site <em>criticizes</em> Canonical for certain privacy-invading features of Ubuntu and teaches users how to fix them. So, obviously, the site is not approved by Canonical. And our use of the trademarked term Ubuntu is plainly descriptive&mdash;it helps the public find this site and understand its message.</p>
+      <p class="disclaimer">
+        <strong>Disclaimer:</strong> In case you are either 1) a complete idiot; or 2) a lawyer; or 3) both, please be aware that this site is not affiliated with or approved by Canonical Limited. This site <em>criticizes</em> Canonical for certain privacy-invading features of Ubuntu and teaches users how to fix them. So, obviously, the site is not approved by Canonical. And our use of the trademarked term Ubuntu is plainly descriptive&mdash;it helps the public find this site and understand its message.
+      </p>
 
     </div>
 
     <script>
-    SyntaxHighlighter.defaults['gutter'] = false;
-    SyntaxHighlighter.defaults['toolbar'] = false;
-    SyntaxHighlighter.all();
+      SyntaxHighlighter.defaults['gutter'] = false;
+      SyntaxHighlighter.defaults['toolbar'] = false;
+      SyntaxHighlighter.all();
     </script>
   </body>
 </html>
