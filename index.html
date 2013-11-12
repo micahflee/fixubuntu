@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fix Ubuntu</title>
     <meta charset="utf-8">
+    <title>Fix Ubuntu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="css/shCore.css">
+    <link rel="stylesheet" href="css/shThemeRDark.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.">
-    <meta property="og:title" content="Fix Ubuntu" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://fixubuntu.com/images/opg.png" />
-    <meta property="og:url" content="https://fixubuntu.com" />
-    <meta property="og:description" content="If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you." />
+    <meta property="og:title" content="Fix Ubuntu">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://fixubuntu.com/img/opg.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1012">
+    <meta property="og:image:height" content="483">
+    <meta property="og:url" content="https://fixubuntu.com">
+    <meta property="og:description" content="If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.">
 
     <!-- syntax highlighter -->
-    <script src="lib/syntaxhighlighter/shCore.js"></script>
-    <script src="lib/syntaxhighlighter/shBrushBash.js"></script>
-    <link rel="stylesheet" href="lib/syntaxhighlighter/shCore.css" />
-    <link rel="stylesheet" href="lib/syntaxhighlighter/shThemeRDark.css" />
-    <style>.syntaxhighlighter { padding:10px; }</style>
-
+    <script src="js/shCore.js"></script>
+    <script src="js/shBrushBash.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -27,8 +28,10 @@
 
       <div id="left">
 
-        <p class="center">Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.</p>
-        <code id="cmd">V=`/usr/bin/lsb_release -rs`; if [ $V \< 12.10 ]; then echo "Good news! Your version of Ubuntu doesn't invade your privacy."; else gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ $V \< 13.10 ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; if ! grep -q productsearch.ubuntu.com /etc/hosts; then echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts >/dev/null; fi; echo "All done. Enjoy your privacy."; fi</code>
+        <p class="center">
+          Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.
+        </p>
+        <code id="cmd">V=`/usr/bin/lsb_release -rs`; if [ $V \&lt; 12.10 ]; then echo "Good news! Your version of Ubuntu doesn't invade your privacy."; else gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ $V \&lt; 13.10 ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; if ! grep -q productsearch.ubuntu.com /etc/hosts; then echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts >/dev/null; fi; echo "All done. Enjoy your privacy."; fi</code>
 
         <h2>What does this do?</h2>
         <pre class="brush: bash">
@@ -38,27 +41,27 @@
 V=`/usr/bin/lsb_release -rs`
 
 # The privacy problems started with 12.10, so earlier versions should do nothing
-if [ $V \< 12.10 ]; then
+if [ $V \&lt; 12.10 ]; then
   echo "Good news! Your version of Ubuntu doesn't invade your privacy."
 else
   # Turn off "Remote Search", so search terms in Dash don't get sent to the internet
   gsettings set com.canonical.Unity.Lenses remote-content-search none
 
   # If you're using earlier than 13.10, uninstall unity-lens-shopping
-  if [ $V \< 13.10 ]; then
+  if [ $V \&lt; 13.10 ]; then
     sudo apt-get remove -y unity-lens-shopping
 
   # If you're using a later version, disable remote scopes
   else
     gsettings set com.canonical.Unity.Lenses disabled-scopes \
-      "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 
-      'more_suggestions-populartracks.scope', 'music-musicstore.scope', 
-      'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 
+      "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope',
+      'more_suggestions-populartracks.scope', 'music-musicstore.scope',
+      'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope',
       'more_suggestions-skimlinks.scope']"
   fi;
 
   # Block connections to Ubuntu's ad server, just in case
-  if ! grep -q productsearch.ubuntu.com /etc/hosts; then 
+  if ! grep -q productsearch.ubuntu.com /etc/hosts; then
     echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts >/dev/null
   fi
 
@@ -70,24 +73,32 @@ fi
 
       <div id="right">
         <h2>Why do we need this?</h2>
-        <p>If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.</p>
-        <p>Ubuntu should protect user privacy by default. Since it doesn't, you can use the code to the left to disable the parts of Ubuntu which are invasive to your privacy.</p>
-        <p><a href="https://www.eff.org/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks">Read more</a>.</p>
+        <p>
+          If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.
+        </p>
+        <p>
+          Ubuntu should protect user privacy by default. Since it doesn't, you can use the code to the left to disable the parts of Ubuntu which are invasive to your privacy.
+        </p>
+        <p>
+          <a href="https://www.eff.org/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks">Read more</a>.
+        </p>
 
         <div class="spacer"></div>
 
         <h2>In the Media</h2>
         <ul id="media">
           <li><a href="https://micahflee.com/2013/11/canonical-shouldnt-abuse-trademark-law-to-silence-critics-of-its-privacy-decisions/"><strong>micahflee.com</strong><br/>Canonical shouldn't abuse trademark law to silence critics of its privacy decisions</a></li>
-          <li><a href="http://arstechnica.com/information-technology/2013/11/canonical-abused-trademark-law-to-target-a-site-critical-of-ubuntu-privacy/"><img src="images/arstechnica.png" /><br/>Canonical "abused trademark law" to target a site critical of Ubuntu privacy</a></li>
-          <li><a href="http://www.wired.com/wiredenterprise/2013/11/fixubuntu/"><img src="images/wired.png" /><br/>Linux Outfit Canonical Launches Campaign to Silence Privacy Critic</a></li>
-          <li><a href="http://www.techdirt.com/articles/20131107/17583725174/disappointing-to-see-canonical-act-like-trademark-bully-over-ubuntu.shtml"><img src="images/techdirt.png" /><br/>Disappointing To See Canonical Act Like A Trademark Bully Over Ubuntu</a></li>
+          <li><a href="http://arstechnica.com/information-technology/2013/11/canonical-abused-trademark-law-to-target-a-site-critical-of-ubuntu-privacy/"><img src="img/arstechnica.png" alt="arstechnica" width="83" height="30"/><br/>Canonical "abused trademark law" to target a site critical of Ubuntu privacy</a></li>
+          <li><a href="http://www.wired.com/wiredenterprise/2013/11/fixubuntu/"><img src="img/wired.png" alt="wired" width="97" height="20"/><br/>Linux Outfit Canonical Launches Campaign to Silence Privacy Critic</a></li>
+          <li><a href="http://www.techdirt.com/articles/20131107/17583725174/disappointing-to-see-canonical-act-like-trademark-bully-over-ubuntu.shtml"><img src="img/techdirt.png" alt="techdirt" width="101" height="25"/><br/>Disappointing To See Canonical Act Like A Trademark Bully Over Ubuntu</a></li>
           <li><a href="http://www.markshuttleworth.com/archives/1299"><strong>markshuttleworth.com</strong><br/>Occasionally we make mistakes. When we do it’s appropriate to apologise, address them, and take steps to ensure they don’t happen again.</a></li>
         </ul>
-        
+
         <div class="spacer"></div>
 
-        <p class="center"><a href="https://github.com/micahflee/fixubuntu">Github</a> &bull; <a href="https://micahflee.com/">Contact</a></p>
+        <p class="center">
+          <a href="https://github.com/micahflee/fixubuntu">Github</a> &bull; <a href="https://micahflee.com/">Contact</a>
+        </p>
 
         <div class="spacer"></div>
 
@@ -95,14 +106,16 @@ fi
 
       <div class="clear"></div>
 
-      <p class="disclaimer"><strong>Disclaimer:</strong> In case you are either 1) a complete idiot; or 2) a lawyer; or 3) both, please be aware that this site is not affiliated with or approved by Canonical Limited. This site <em>criticizes</em> Canonical for certain privacy-invading features of Ubuntu and teaches users how to fix them. So, obviously, the site is not approved by Canonical. And our use of the trademarked term Ubuntu is plainly descriptive&mdash;it helps the public find this site and understand its message.</p>
+      <p class="disclaimer">
+        <strong>Disclaimer:</strong> In case you are either 1) a complete idiot; or 2) a lawyer; or 3) both, please be aware that this site is not affiliated with or approved by Canonical Limited. This site <em>criticizes</em> Canonical for certain privacy-invading features of Ubuntu and teaches users how to fix them. So, obviously, the site is not approved by Canonical. And our use of the trademarked term Ubuntu is plainly descriptive&mdash;it helps the public find this site and understand its message.
+      </p>
 
     </div>
 
     <script>
-    SyntaxHighlighter.defaults['gutter'] = false;
-    SyntaxHighlighter.defaults['toolbar'] = false;
-    SyntaxHighlighter.all();
+      SyntaxHighlighter.defaults['gutter'] = false;
+      SyntaxHighlighter.defaults['toolbar'] = false;
+      SyntaxHighlighter.all();
     </script>
   </body>
 </html>

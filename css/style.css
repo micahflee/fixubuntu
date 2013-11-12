@@ -2,7 +2,7 @@
   font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 400;
-  src: local('Ubuntu'), url(ubuntu.woff) format('woff');
+  src: local('Ubuntu'), url(fonts/ubuntu.woff) format('woff');
 }
 
 body {
@@ -17,6 +17,7 @@ body {
   float: left;
   margin: 0 2%;
 }
+
 #right {
   width: 26%;
   float: left;
@@ -38,6 +39,7 @@ h1 {
   background-color: #111;
   display: block;
 }
+
 #cmd pre {
   overflow: auto;
 }
@@ -70,20 +72,26 @@ a {
   padding: 20px;
 }
 
-ul#media {
+#media {
   list-style: none;
   padding: 0;
 }
-ul#media li {
+
+#media li {
   margin: 0 0 15px 0;
 }
-ul#media li a {
+
+#media li a {
   text-decoration: none;
 }
 
+.syntaxhighlighter {
+    padding: 10px;
+}
+
 @media (max-width: 600px) {
-  div#left, div#right {
+  #left, #right {
     width: 100%;
     margin: 0;
-  } 
+  }
 }
