@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
-  font-weight: 400;
-  src: local('Ubuntu'), url(fonts/ubuntu.woff) format('woff');
+  font-weight: normal;
+  src: local('Ubuntu'), url(../fonts/ubuntu.woff) format('woff');
 }
 
 body {
