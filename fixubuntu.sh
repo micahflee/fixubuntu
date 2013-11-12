@@ -17,17 +17,16 @@ else
   # If you're using a later version, disable remote scopes
   else
     gsettings set com.canonical.Unity.Lenses disabled-scopes \
-      "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 
-      'more_suggestions-populartracks.scope', 'music-musicstore.scope', 
-      'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 
+      "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope',
+      'more_suggestions-populartracks.scope', 'music-musicstore.scope',
+      'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope',
       'more_suggestions-skimlinks.scope']"
   fi;
 
   # Block connections to Ubuntu's ad server, just in case
-  if ! grep -q productsearch.ubuntu.com /etc/hosts; then 
+  if ! grep -q productsearch.ubuntu.com /etc/hosts; then
     echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts >/dev/null
   fi
 
   echo "All done. Enjoy your privacy."
 fi
-
