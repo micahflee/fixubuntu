@@ -14,18 +14,18 @@ body {
   color: white;
 }
 
-#header {
+.header {
   text-align: center;
   margin: 20px 0;
 }
 
-#left {
+.left {
   width: 66%;
   float: left;
   margin: 0 2%;
 }
 
-#right {
+.right {
   width: 26%;
   float: left;
   margin: 0 2%;
@@ -42,7 +42,7 @@ h1 {
   display: inline-block;
 }
 
-#cmd {
+.cmd {
   font-size: 20px;
   text-align: left;
   padding: 20px;
@@ -83,16 +83,16 @@ a {
   padding: 20px;
 }
 
-#media {
+.media {
   list-style: none;
   padding: 0;
 }
 
-#media li {
+.media li {
   margin: 0 0 15px 0;
 }
 
-#media li a {
+.media li > a {
   text-decoration: none;
 }
 
@@ -101,7 +101,7 @@ a {
 }
 
 @media (max-width: 600px) {
-  #left, #right {
+  .left, .right {
     width: 100%;
     margin: 0;
   }

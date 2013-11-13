@@ -24,17 +24,17 @@
     <script src="js/shBrushBash.js"></script>
   </head>
   <body>
-    <div id="wrapper">
-      <div id="header">
+    <div>
+      <div class="header">
         <h1>fix ubuntu</h1>
       </div>
 
-      <div id="left">
+      <div class="left">
 
         <p class="center">
           Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.
         </p>
-        <code id="cmd">V=`/usr/bin/lsb_release -rs`; if [ $V \&lt; 12.10 ]; then echo "Good news! Your version of Ubuntu doesn't invade your privacy."; else gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ $V \&lt; 13.10 ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; if ! grep -q productsearch.ubuntu.com /etc/hosts; then echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts >/dev/null; fi; echo "All done. Enjoy your privacy."; fi</code>
+        <code class="cmd">V=`/usr/bin/lsb_release -rs`; if [ $V \&lt; 12.10 ]; then echo "Good news! Your version of Ubuntu doesn't invade your privacy."; else gsettings set com.canonical.Unity.Lenses remote-content-search none; if [ $V \&lt; 13.10 ]; then sudo apt-get remove -y unity-lens-shopping; else gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; if ! grep -q productsearch.ubuntu.com /etc/hosts; then echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts >/dev/null; fi; echo "All done. Enjoy your privacy."; fi</code>
 
         <h2>What does this do?</h2>
         <pre class="brush: bash">
@@ -74,7 +74,7 @@ fi
 
       </div>
 
-      <div id="right">
+      <div class="right">
         <h2>Why do we need this?</h2>
         <p>
           If you're an Ubuntu user and you're using the default settings, each time you start
@@ -95,7 +95,7 @@ fi
         <div class="spacer"></div>
 
         <h2>In the Media</h2>
-        <ul id="media">
+        <ul class="media">
           <li>
             <a href="https://micahflee.com/2013/11/canonical-shouldnt-abuse-trademark-law-to-silence-critics-of-its-privacy-decisions/">
               <strong>micahflee.com</strong>
