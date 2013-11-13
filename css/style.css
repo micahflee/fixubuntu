@@ -5,11 +5,13 @@
   src: url(../fonts/ubuntu.woff) format('woff');
 }
 
+html {
+  font: 16px/1.5em 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 body {
   background-color: black;
   color: white;
-  font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.5em;
 }
 
 #header {
