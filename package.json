@@ -1,0 +1,36 @@
+{
+  "name": "fixubuntu",
+  "version": "0.1.0",
+  "author": "Micah Lee",
+  "license": "GNU AGPLv3",
+  "homepage": "https://github.com/micahflee/fixubuntu",
+  "description": "The code that powers <https://fixubuntu.com/>.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/micahflee/fixubuntu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/micahflee/fixubuntu/issues"
+  },
+  "keywords": [
+    "Ubuntu",
+    "fix",
+    "privacy",
+    "advertisements"
+  ],
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-include-replace": "~1.2.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
