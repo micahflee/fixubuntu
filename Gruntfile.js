@@ -55,6 +55,7 @@ module.exports = function(grunt) {
       compress: {
         files: {
           'dist/js/pack-<%= pkg.version %>.js': [
+            'js/plugins.js',
             'js/shCore.js',
             'js/shBrushBash.js'
           ]
