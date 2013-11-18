@@ -75,6 +75,10 @@ a {
   height: 20px;
 }
 
+.note {
+  font-size: 0.8em;
+}
+
 .disclaimer {
   font-size: 0.8em;
   color: #666;
