@@ -12,6 +12,11 @@ body {
   line-height: 1.5em;
 }
 
+#header {
+  text-align: center;
+  margin: 20px 0;
+}
+
 #left {
   width: 66%;
   float: left;
@@ -25,10 +30,14 @@ body {
 }
 
 h1 {
-  text-align: center;
   font-size: 85px;
   line-height: 100%;
   margin: 0;
+  background-image: url(../img/ubuntu.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  padding-right: 70px;
+  display: inline-block;
 }
 
 #cmd {
@@ -93,5 +102,10 @@ a {
   #left, #right {
     width: 100%;
     margin: 0;
+  }
+
+  h1 {
+    font-size: 45px;
+    min-height: 50px;
   }
 }
