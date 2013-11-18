@@ -73,12 +73,11 @@ a {
   height: 20px;
 }
 
-.note {
+.small {
   font-size: 0.8em;
 }
 
 .disclaimer {
-  font-size: 0.8em;
   color: #666;
   padding: 20px;
 }
