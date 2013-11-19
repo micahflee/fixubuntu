@@ -1,3 +1,5 @@
+[![devDependency Status](https://david-dm.org/micahflee/fixubuntu/dev-status.png?theme=shields.io)](https://david-dm.org/micahflee/fixubuntu#info=devDependencies)
+
 # Fix Ubuntu
 
 This is the code that powers <https://fixubuntu.com/>.
