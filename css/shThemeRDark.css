@@ -100,7 +100,7 @@
 .syntaxhighlighter .script {
   font-weight: bold !important;
   color: #5ba1cf !important;
-  background-color: none !important;
+  background-color: transparent !important;
 }
 .syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
   color: #e0e8ff !important;
