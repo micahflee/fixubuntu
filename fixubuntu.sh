@@ -6,7 +6,7 @@ CCUL="com.canonical.Unity.lenses"
 # Figure out the version of Ubuntu that you're running
 V=`/usr/bin/lsb_release -rs`
 # The privacy problems started with 12.10, so earlier versions should do nothing
-if [ $V \< 12.10 ]; then
+if awk "BEGIN {exit !($V < 12.10)}"; then
   echo "Good news! This version of Ubuntu is not known to invade your privacy."
 else
   # Turn off "Remote Search", so search terms in Dash don't get sent to the internet
