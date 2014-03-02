@@ -1,4 +1,7 @@
+/* jshint indent:2, node:true */
+
 module.exports = function(grunt) {
+  'use strict';
 
   grunt.initConfig({
 
