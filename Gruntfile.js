@@ -8,8 +8,8 @@ module.exports = function(grunt) {
       dist: {
         files: [
           { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'] },
-          { dest: 'dist/', src: 'fonts/**' },
-          { dest: 'dist/', src: 'img/**' }
+          { dest: 'dist/', src: 'assets/fonts/**' },
+          { dest: 'dist/', src: 'assets/img/**' }
         ]
       }
     },
@@ -35,11 +35,11 @@ module.exports = function(grunt) {
           report: 'min'
         },
         files: {
-          'dist/css/pack-<%= pkg.version %>.css': [
-            'css/normalize.css',
-            'css/shCore.css',
-            'css/shThemeRDark.css',
-            'css/style.css'
+          'dist/assets/css/pack-<%= pkg.version %>.css': [
+            'assets/css/normalize.css',
+            'assets/css/shCore.css',
+            'assets/css/shThemeRDark.css',
+            'assets/css/style.css'
           ]
         }
       }
@@ -56,10 +56,10 @@ module.exports = function(grunt) {
       },
       compress: {
         files: {
-          'dist/js/pack-<%= pkg.version %>.js': [
-            'js/plugins.js',
-            'js/shCore.js',
-            'js/shBrushBash.js'
+          'dist/assets/js/pack-<%= pkg.version %>.js': [
+            'assets/js/plugins.js',
+            'assets/js/shCore.js',
+            'assets/js/shBrushBash.js'
           ]
         }
       }
