@@ -1,4 +1,7 @@
+/* jshint indent:2, node:true */
+
 module.exports = function(grunt) {
+  'use strict';
 
   grunt.initConfig({
 
@@ -7,9 +10,9 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: [
-          { dest: 'dist/', src: ['.htaccess', 'favicon.png', 'fixubuntu.sh'] },
-          { dest: 'dist/', src: 'fonts/**' },
-          { dest: 'dist/', src: 'img/**' }
+          { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'] },
+          { dest: 'dist/', src: 'assets/fonts/**' },
+          { dest: 'dist/', src: 'assets/img/**' }
         ]
       }
     },
@@ -30,16 +33,16 @@ module.exports = function(grunt) {
     cssmin: {
       compress: {
         options: {
+          compatibility: 'ie8',
           keepSpecialComments: 0,
-          report: 'min',
-          selectorsMergeMode: 'ie8'
+          report: 'min'
         },
         files: {
-          'dist/css/pack-<%= pkg.version %>.css': [
-            'css/normalize.css',
-            'css/shCore.css',
-            'css/shThemeRDark.css',
-            'css/style.css'
+          'dist/assets/css/pack-<%= pkg.version %>.css': [
+            'assets/css/normalize.css',
+            'assets/css/shCore.css',
+            'assets/css/shThemeRDark.css',
+            'assets/css/style.css'
           ]
         }
       }
@@ -47,17 +50,19 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        /*compress: true,*/
+        compress: {
+          warnings: false
+        },
         mangle: true,
         preserveComments: false,
         report: 'min'
       },
       compress: {
         files: {
-          'dist/js/pack-<%= pkg.version %>.js': [
-            'js/plugins.js',
-            'js/shCore.js',
-            'js/shBrushBash.js'
+          'dist/assets/js/pack-<%= pkg.version %>.js': [
+            'assets/js/plugins.js',
+            'assets/js/shCore.js',
+            'assets/js/shBrushBash.js'
           ]
         }
       }
@@ -79,13 +84,9 @@ module.exports = function(grunt) {
 
   });
 
-  // Load the grunt plugins
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-include-replace');
+  // Load any grunt plugins found in package.json.
+  require('load-grunt-tasks')(grunt, {scope: 'dependencies'});
+  require('time-grunt')(grunt);
 
   grunt.registerTask('default', ['clean', 'copy', 'includereplace', 'cssmin', 'uglify']);
 };
