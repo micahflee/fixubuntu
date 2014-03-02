@@ -16,12 +16,19 @@ body {
 }
 
 h1 {
-  background: url('../img/ubuntu.png') right top no-repeat;
-  display: inline-block;
   font-size: 85px;
   line-height: 100%;
   margin: 0;
-  padding-right: 70px;
+}
+
+h1:after {
+  background: url('../img/ubuntu.png') right top no-repeat;
+  content: '';
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
 }
 
 h2 {
@@ -103,6 +110,10 @@ a {
   h1 {
     font-size: 45px;
     min-height: 50px;
+  }
+
+  h1:after {
+    vertical-align: middle;
   }
 
   .left, .right {
