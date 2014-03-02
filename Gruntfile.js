@@ -79,13 +79,9 @@ module.exports = function(grunt) {
 
   });
 
-  // Load the grunt plugins
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-include-replace');
+  // Load any grunt plugins found in package.json.
+  require('load-grunt-tasks')(grunt, {scope: 'dependencies'});
+  require('time-grunt')(grunt);
 
   grunt.registerTask('default', ['clean', 'copy', 'includereplace', 'cssmin', 'uglify']);
 };
