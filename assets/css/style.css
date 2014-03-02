@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-  background: url("../img/ubuntu.png") right top no-repeat;
+  background: url('../img/ubuntu.png') right top no-repeat;
   display: inline-block;
   font-size: 85px;
   line-height: 100%;
@@ -99,14 +99,14 @@ a {
     padding: 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 665px) {
   h1 {
     font-size: 45px;
     min-height: 50px;
   }
 
   .left, .right {
-    width: 100%;
-    margin: 0;
+    width: 92%;
+    margin: 2%;
   }
 }
