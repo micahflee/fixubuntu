@@ -1,9 +1,7 @@
 #!/bin/bash
 
-
 GS="/usr/bin/gsettings"
 CCUL="com.canonical.Unity.lenses"
-
 
 # Figure out the version of Ubuntu that you're running
 V=`/usr/bin/lsb_release -rs`
