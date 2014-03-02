@@ -13,62 +13,58 @@ html {
   font: 16px/1.5em 'ubunturegular';
 }
 
+html {
+  font: 16px/1.5em 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 body {
   background-color: black;
   color: white;
-  font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.5em;
 }
 
-#header {
+h1 {
+  background: url("../img/ubuntu.png") right top no-repeat;
+  display: inline-block;
+  font-size: 85px;
+  line-height: 100%;
+  margin: 0;
+  padding-right: 70px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+}
+
+a {
+  color: #999;
+}
+
+.header {
   text-align: center;
   margin: 20px 0;
 }
 
-#left {
+.left {
   width: 66%;
   float: left;
   margin: 0 2%;
 }
 
-#right {
+.right {
   width: 26%;
   float: left;
   margin: 0 2%;
 }
 
-h1 {
-  font-size: 85px;
-  line-height: 100%;
-  margin: 0;
-  background-image: url(../img/ubuntu.png);
-  background-position: right top;
-  background-repeat: no-repeat;
-  padding-right: 70px;
-  display: inline-block;
-}
-
-#cmd {
+.cmd {
   font-size: 20px;
   text-align: left;
   padding: 20px;
   border: 1px solid #333;
   background-color: #111;
   display: block;
-}
-
-#cmd pre {
-  overflow: auto;
-}
-
-h2 {
-  text-align: center;
-  font-size: 20px;
-  font-weight: normal;
-}
-
-a {
-  color: #999;
 }
 
 .center {
@@ -83,26 +79,25 @@ a {
   height: 20px;
 }
 
-.note {
+.small {
   font-size: 0.8em;
 }
 
 .disclaimer {
-  font-size: 0.8em;
   color: #666;
   padding: 20px;
 }
 
-#media {
+.media {
   list-style: none;
   padding: 0;
 }
 
-#media li {
+.media li {
   margin: 0 0 15px 0;
 }
 
-#media li a {
+.media li > a {
   text-decoration: none;
 }
 
@@ -112,13 +107,13 @@ a {
 }
 
 @media (max-width: 600px) {
-  #left, #right {
-    width: 100%;
-    margin: 0;
-  }
-
   h1 {
     font-size: 45px;
     min-height: 50px;
+  }
+
+  .left, .right {
+    width: 100%;
+    margin: 0;
   }
 }
