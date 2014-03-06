@@ -9,6 +9,17 @@ V=`/usr/bin/lsb_release -rs`
 if awk "BEGIN {exit !($V < 12.10)}"; then
   echo "Good news! This version of Ubuntu is not known to invade your privacy."
 else
+
+  # Check Canonical schema is present. Take first match, ignoring case.
+  SCHEMA="`$GS list-schemas | grep -i $CCUL | head -1`"
+  if [ -z "$SCHEMA" ]
+    then
+    printf "Error: could not find Canonical schema %s.\n" "$CCUL" 1>&2
+    exit 1
+  else
+    CCUL="$SCHEMA"
+  fi
+
   # Turn off "Remote Search", so search terms in Dash don't get sent to the internet
   $GS set $CCUL remote-content-search none
 
