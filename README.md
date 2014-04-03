@@ -9,9 +9,8 @@ Copyright 2013 Micah Lee, and licensed under AGPLv3. See [LICENSE](/LICENSE) for
 
 ## Developing
 
-1. Install [Node.js](http://nodejs.org/)
-2. Install Grunt: `npm install -g grunt-cli`
-3. Install Node.js' dependencies: `cd fixubuntu && npm install`
-4. Run `grunt` to generate the files
-5. Run `grunt connect` and open http://localhost:4000
-   in your favorite browser to check the changes
+* Install [Node.js](http://nodejs.org/download/)
+* Install Grunt: `npm install -g grunt-cli`
+* Install the Node.js dependencies: `cd fixubuntu && npm install`
+* Run `grunt build` to build the static site,
+  `grunt` to build and watch for changes (http://localhost:8001/)

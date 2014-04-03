@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Fix Ubuntu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/pack-@@version.css">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="/assets/css/pack-@@version.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta name="description" content="If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.">
     <meta property="og:title" content="Fix Ubuntu">
     <meta property="og:type" content="website">
@@ -15,7 +15,7 @@
     <meta property="og:image:height" content="122">
     <meta property="og:url" content="https://fixubuntu.com">
     <meta property="og:description" content="If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.">
-    <script src="assets/js/pack-@@version.js"></script>
+    <script src="/assets/js/pack-@@version.js"></script>
     <script>
       SyntaxHighlighter.defaults['gutter'] = false;
       SyntaxHighlighter.defaults['toolbar'] = false;
@@ -30,7 +30,7 @@
 
       <div class="header">
         <h1>fix ubuntu</h1>
-      </div>          
+      </div>
 
       <div class="left">
 
@@ -57,7 +57,7 @@ else
   SCHEMA="`$GS list-schemas | grep -i $CCUL | head -1`"
   if [ -z "$SCHEMA" ]
     then
-    printf "Error: could not find Canonical schema %s.\n" "$CCUL" 1&gt;&2
+    printf "Error: could not find Canonical schema %s.\n" "$CCUL" 1&gt;&amp;2
     exit 1
   else
     CCUL="$SCHEMA"
@@ -121,21 +121,21 @@ fi
           </li>
           <li>
             <a href="http://arstechnica.com/information-technology/2013/11/canonical-abused-trademark-law-to-target-a-site-critical-of-ubuntu-privacy/">
-              <img src="assets/img/arstechnica.png" alt="arstechnica" width="83" height="30">
+              <img src="/assets/img/arstechnica.png" alt="arstechnica" width="83" height="30">
               <br>
               Canonical "abused trademark law" to target a site critical of Ubuntu privacy
             </a>
           </li>
           <li>
             <a href="http://www.wired.com/wiredenterprise/2013/11/fixubuntu/">
-              <img src="assets/img/wired.png" alt="wired" width="97" height="20">
+              <img src="/assets/img/wired.png" alt="wired" width="97" height="20">
               <br>
               Linux Outfit Canonical Launches Campaign to Silence Privacy Critic
             </a>
           </li>
           <li>
             <a href="http://www.techdirt.com/articles/20131107/17583725174/disappointing-to-see-canonical-act-like-trademark-bully-over-ubuntu.shtml">
-              <img src="assets/img/techdirt.png" alt="techdirt" width="101" height="25">
+              <img src="/assets/img/techdirt.png" alt="techdirt" width="101" height="25">
               <br>
               Disappointing To See Canonical Act Like A Trademark Bully Over Ubuntu
             </a>
