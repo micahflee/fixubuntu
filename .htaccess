@@ -173,6 +173,9 @@ Options -MultiViews
     AddType text/x-component                            htc
     AddType text/x-vcard                                vcf
 
+  # Treat .sh as text/plain, so it displays in browser
+    AddType text/plain                                  sh
+
 </IfModule>
 
 # ------------------------------------------------------------------------------
