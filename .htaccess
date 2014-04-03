@@ -377,6 +377,12 @@ AddDefaultCharset utf-8
 
 </FilesMatch>
 
+# Allow access to fixubuntu.sh
+
+<FilesMatch "fixubuntu.sh$">
+    Allow from all
+</FilesMatch>
+
 # ------------------------------------------------------------------------------
 # | Reducing MIME-type security risks                                          |
 # ------------------------------------------------------------------------------
