@@ -46,6 +46,14 @@ a {
   margin: 20px 0;
 }
 
+.good-news {
+  color: #ffffff;
+  background-color: #cc0000;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
 .left {
   width: 66%;
   float: left;

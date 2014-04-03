@@ -22,13 +22,18 @@
       <div class="header">
         <h1>fix ubuntu</h1>
       </div>
+          
+      <div class="good-news">
+        <strong>Good news!</strong> In Ubuntu 14.04 LTS, your privacy doesn't get violated unless you opt-in to it.<br/>
+        You only need to run this if you're using Ubuntu 12.10, 13.04, or 13.10.
+      </div>
 
       <div class="left">
 
         <p class="center">
           Copy code. Open a terminal (Ctrl-Alt-T). Paste code, press enter. Type password. Enjoy your privacy.
         </p>
-        <code class="cmd">GS="/usr/bin/gsettings"; CCUL="com.canonical.Unity.lenses"; V=`/usr/bin/lsb_release -rs`; if awk "BEGIN {exit !($V &lt; 12.10)}"; then echo "Good news! This version of Ubuntu is not known to invade your privacy."; else $GS set $CCUL remote-content-search none; if [ $V \&lt; 13.10 ]; then sudo apt-get remove -y unity-lens-shopping; else $GS set $CCUL disabled-scopes \ "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; if ! grep -q "127.0.0.1 productsearch.ubuntu.com" /etc/hosts; then echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts &gt;/dev/null; fi; echo "All done. Enjoy your privacy."; fi</code>
+        <code class="cmd">GS="/usr/bin/gsettings"; CCUL="com.canonical.Unity.lenses"; V=`/usr/bin/lsb_release -rs`; if awk "BEGIN {exit !($V &lt; 12.10 || $V &gt;= 14.04)}"; then echo "Good news! This version of Ubuntu is not known to invade your privacy."; else SCHEMA="`$GS list-schemas | grep -i $CCUL | head -1`"; if [ -z "$SCHEMA" ] then printf "Error: could not find Canonical schema %s.\n" "$CCUL" 1&gt;&2; exit 1; else CCUL="$SCHEMA"; fi; $GS set $CCUL remote-content-search none; if [ $V \&lt; 13.10 ]; then sudo apt-get remove -y unity-lens-shopping; else $GS set $CCUL disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"; fi; if ! grep -q "127.0.0.1 productsearch.ubuntu.com" /etc/hosts; then echo -e "\n127.0.0.1 productsearch.ubuntu.com" | sudo tee -a /etc/hosts &gt;/dev/null; fi; echo "All done. Enjoy your privacy."; fi</code>
 
         <h2>What does this do?</h2>
         <pre class="brush: bash">
