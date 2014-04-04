@@ -1,7 +1,8 @@
 /* jshint indent:2, node:true */
 
+'use strict';
+
 module.exports = function(grunt) {
-  'use strict';
 
   grunt.initConfig({
 
@@ -68,25 +69,75 @@ module.exports = function(grunt) {
       }
     },
 
+    htmlmin: {
+      dist: {
+        options: {
+          collapseWhitespace: true,
+          removeComments: true
+        },
+        expand: true,
+        cwd: 'dist',
+        dest: 'dist',
+        src: ['**/*.html']
+      }
+    },
+
+    watch: {
+      options: {
+        livereload: true
+      },
+      files: ['assets/**/*', 'index.html', 'fixubuntu.sh', 'Gruntfile.js'],
+      tasks: 'build'
+    },
+
     connect: {
       server: {
         options: {
           base: 'dist/',
-          keepalive: true,
           port: 4000
         }
       }
     },
 
+    validation: {
+      options: {
+        charset: 'utf-8',
+        doctype: 'HTML5',
+        failHard: true,
+        reset: true
+      },
+      files: {
+        src: 'dist/**/*.html'
+      }
+    },
+
     clean: {
-      dist: 'dist/*'
+      dist: 'dist/'
     }
 
   });
 
   // Load any grunt plugins found in package.json.
-  require('load-grunt-tasks')(grunt, {scope: 'dependencies'});
+  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   require('time-grunt')(grunt);
 
-  grunt.registerTask('default', ['clean', 'copy', 'includereplace', 'cssmin', 'uglify']);
+  grunt.registerTask('build', [
+    'clean',
+    'copy',
+    'includereplace',
+    'cssmin',
+    'uglify',
+    'htmlmin'
+  ]);
+
+  grunt.registerTask('test', [
+    'build',
+    'validation'
+  ]);
+
+  grunt.registerTask('default', [
+    'build',
+    'connect',
+    'watch'
+  ]);
 };
