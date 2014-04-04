@@ -16,11 +16,7 @@
     <meta property="og:url" content="https://fixubuntu.com">
     <meta property="og:description" content="If you're an Ubuntu user and you're using the default settings, each time you start typing in Dash (to open an application or search for a file on your computer), your search terms get sent to a variety of third parties, some of which advertise to you.">
     <script src="/assets/js/pack-@@version.js"></script>
-    <script>
-      SyntaxHighlighter.defaults['gutter'] = false;
-      SyntaxHighlighter.defaults['toolbar'] = false;
-      SyntaxHighlighter.all();
-    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body>
     <div>
@@ -37,10 +33,10 @@
         <p class="center">
           <strong>How to restore privacy:</strong> Copy and paste the following code into a terminal. Press enter, and type your password. Enjoy your privacy.
         </p>
-        <code class="cmd">wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash</code>
+        <pre><code class="cmd">wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash</code></pre>
 
         <h2>What does this do?</h2>
-        <pre class="brush: bash">
+        <pre><code>
 #!/bin/bash
 
 GS="/usr/bin/gsettings"
@@ -86,7 +82,7 @@ else
 
   echo "All done. Enjoy your privacy."
 fi
-        </pre>
+        </code></pre>
 
       </div>
 
@@ -102,7 +98,11 @@ fi
           the code to the left to disable the parts of Ubuntu which are invasive to your privacy.
         </p>
         <p class="small">
-          Note: This privacy problem only affects Unity. If you use GNOME (sudo apt-get install gnome-shell) or any other desktop environment, or if you run an Ubuntu derivative like <a href="http://www.linuxmint.com/">Linux Mint</a>, <a href="http://xubuntu.org/">Xubuntu</a>, <a href="http://www.kubuntu.org/">Kubuntu</a>, etc., you won't have this problem.
+          Note: This privacy problem only affects Unity. If you use GNOME
+          (<code>sudo apt-get install gnome-shell</code>) or any other desktop environment,
+          or if you run an Ubuntu derivative like <a href="http://www.linuxmint.com/">Linux Mint</a>,
+          <a href="http://xubuntu.org/">Xubuntu</a>, <a href="http://www.kubuntu.org/">Kubuntu</a>, etc.,
+          you won't have this problem.
         </p>
         <p>
           <a href="https://www.eff.org/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks">Read more</a>.
