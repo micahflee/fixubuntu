@@ -47,7 +47,7 @@ a {
 }
 
 .good-news {
-  color: #ffffff;
+  color: white;
   background-color: #cc0000;
   text-align: center;
   padding: 10px;
@@ -66,12 +66,13 @@ a {
 }
 
 .cmd {
-  font-size: 20px;
-  text-align: center;
-  padding: 20px;
-  border: 1px solid #333;
   background-color: #111;
+  border: 1px solid #333;
   display: block;
+  font-size: 1.25em;
+  overflow: auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .center {
@@ -96,7 +97,7 @@ a {
 }
 
 .media {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
@@ -108,9 +109,10 @@ a {
   text-decoration: none;
 }
 
-/* syntaxhighlighter override */
-.syntaxhighlighter {
-    padding: 10px;
+/* hljs override */
+.hljs {
+    background-color: #1B2426;
+    padding: 0.6em;
 }
 
 @media (max-width: 665px) {
@@ -123,8 +125,9 @@ a {
     vertical-align: middle;
   }
 
-  .left, .right {
-    width: 92%;
-    margin: 2%;
+  .left,
+  .right {
+    width: 90%;
+    margin: 4%;
   }
 }

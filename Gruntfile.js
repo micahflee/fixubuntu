@@ -41,8 +41,7 @@ module.exports = function(grunt) {
         files: {
           'dist/assets/css/pack-<%= pkg.version %>.css': [
             'assets/css/normalize.css',
-            'assets/css/shCore.css',
-            'assets/css/shThemeRDark.css',
+            'assets/css/monokai.css',
             'assets/css/style.css'
           ]
         }
@@ -62,8 +61,7 @@ module.exports = function(grunt) {
         files: {
           'dist/assets/js/pack-<%= pkg.version %>.js': [
             'assets/js/plugins.js',
-            'assets/js/shCore.js',
-            'assets/js/shBrushBash.js'
+            'assets/js/highlight.pack.js'
           ]
         }
       }
