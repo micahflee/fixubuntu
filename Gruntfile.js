@@ -31,6 +31,19 @@ module.exports = function(grunt) {
       }
     },
 
+    uncss: {
+      options: {
+        htmlroot: "dist",
+        ignore: [
+          /(#|\.)hljs(\-[a-zA-Z]+)?/
+        ]
+      },
+      dist: {
+        src: "dist/**/*.html",
+        dest: "<%= concat.css.dest %>"
+      }
+    },
+
     cssmin: {
       options: {
         compatibility: 'ie8',
@@ -143,6 +156,7 @@ module.exports = function(grunt) {
     'copy',
     'useminPrepare',
     'concat',
+    'uncss',
     'cssmin',
     'uglify',
     'filerev',
