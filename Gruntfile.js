@@ -75,6 +75,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           collapseWhitespace: true,
+          removeAttributeQuotes: true,
           removeComments: true
         },
         expand: true,
