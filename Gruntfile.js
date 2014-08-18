@@ -6,11 +6,10 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    pkg: grunt.file.readJSON('package.json'),
-
     copy: {
       dist: {
         files: [
+          { src: '*.html', dest: 'dist/' },
           { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'] },
           { dest: 'dist/', src: 'assets/fonts/**' },
           { dest: 'dist/', src: 'assets/img/**' }
@@ -18,32 +17,41 @@ module.exports = function(grunt) {
       }
     },
 
-    includereplace: {
-      dist: {
-        options: {
-          globals: {
-            version: '<%= pkg.version %>'
-          }
-        },
-        files: [
-          { src: '*.html', dest: 'dist/' }
+    concat: {
+      css: {
+        src: ['assets/css/normalize.css',
+              'assets/css/monokai.css',
+              'assets/css/style.css'],
+        dest: 'dist/assets/css/pack.css'
+      },
+      js: {
+        src: ['assets/js/plugins.js',
+              'assets/js/highlight.pack.js'],
+        dest: 'dist/assets/js/pack.js'
+      }
+    },
+
+    uncss: {
+      options: {
+        htmlroot: "dist",
+        ignore: [
+          /(#|\.)hljs(\-[a-zA-Z]+)?/
         ]
+      },
+      dist: {
+        src: "dist/**/*.html",
+        dest: "<%= concat.css.dest %>"
       }
     },
 
     cssmin: {
-      compress: {
-        options: {
-          compatibility: 'ie8',
-          keepSpecialComments: 0,
-          report: 'min'
-        },
+      options: {
+        compatibility: 'ie8',
+        keepSpecialComments: 0
+      },
+      dist: {
         files: {
-          'dist/assets/css/pack-<%= pkg.version %>.css': [
-            'assets/css/normalize.css',
-            'assets/css/monokai.css',
-            'assets/css/style.css'
-          ]
+          '<%= concat.css.dest %>': '<%= concat.css.dest %>'
         }
       }
     },
@@ -54,15 +62,11 @@ module.exports = function(grunt) {
           warnings: false
         },
         mangle: true,
-        preserveComments: false,
-        report: 'min'
+        preserveComments: false
       },
-      compress: {
+      dist: {
         files: {
-          'dist/assets/js/pack-<%= pkg.version %>.js': [
-            'assets/js/plugins.js',
-            'assets/js/highlight.pack.js'
-          ]
+          '<%= concat.js.dest %>': '<%= concat.js.dest %>'
         }
       }
     },
@@ -71,13 +75,42 @@ module.exports = function(grunt) {
       dist: {
         options: {
           collapseWhitespace: true,
+          removeAttributeQuotes: true,
           removeComments: true
         },
         expand: true,
         cwd: 'dist',
         dest: 'dist',
-        src: ['**/*.html']
+        src: '**/*.html'
       }
+    },
+
+    filerev: {
+      css: {
+        src: 'dist/assets/css/**/{,*/}*.css'
+      },
+      fonts: {
+        src: 'dist/assets/fonts/**/*.{eot,svg,ttf,woff}'
+      },
+      images: {
+        src: ['dist/assets/img/**/*.{jpg,jpeg,gif,png}', '!dist/assets/img/opg.png']
+      },
+      js: {
+        src: 'dist/assets/js/**/{,*/}*.js'
+      }
+    },
+
+    useminPrepare: {
+      html: 'dist/index.html',
+      options: {
+        dest: 'dist',
+        root: 'dist'
+      }
+    },
+
+    usemin: {
+      css: 'dist/assets/css/pack*.css',
+      html: 'dist/**/*.html'
     },
 
     watch: {
@@ -122,9 +155,13 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean',
     'copy',
-    'includereplace',
+    'useminPrepare',
+    'concat',
+    'uncss',
     'cssmin',
     'uglify',
+    'filerev',
+    'usemin',
     'htmlmin'
   ]);
 
@@ -138,4 +175,5 @@ module.exports = function(grunt) {
     'connect',
     'watch'
   ]);
+
 };

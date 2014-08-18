@@ -1,4 +1,4 @@
-[![devDependency Status](https://david-dm.org/micahflee/fixubuntu/dev-status.png?theme=shields.io)](https://david-dm.org/micahflee/fixubuntu#info=devDependencies)
+[![devDependency Status](https://david-dm.org/micahflee/fixubuntu/dev-status.svg)](https://david-dm.org/micahflee/fixubuntu#info=devDependencies)
 
 # Fix Ubuntu
 
