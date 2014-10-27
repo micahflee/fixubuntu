@@ -17,6 +17,17 @@ module.exports = function(grunt) {
       }
     },
 
+    replace: {
+      insert_script: {
+        src: ['dist/index.html'],
+        overwrite: true,
+        replacements: [{
+          from: '{{FIXUBUNTU_SCRIPT}}',
+          to: '<%- grunt.file.read("dist/fixubuntu.sh") %>'
+        }]
+      }
+    },
+
     concat: {
       css: {
         src: ['assets/css/normalize.css',
@@ -155,6 +166,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean',
     'copy',
+    'replace',
     'useminPrepare',
     'concat',
     'uncss',
