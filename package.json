@@ -33,6 +33,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-filerev": "~2.1.1",
     "grunt-html-validation": "~0.1.18",
+    "grunt-text-replace": "~0.3.12",
     "grunt-uncss": "~0.3.7",
     "grunt-usemin": "~2.5.1",
     "load-grunt-tasks": "~1.0.0",
