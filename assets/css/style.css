@@ -43,7 +43,7 @@ a {
   color: #999;
 }
 
-.header {
+.page-header {
   text-align: center;
   margin: 20px 0;
 }
@@ -77,25 +77,24 @@ a {
   text-align: center;
 }
 
-.center {
+.text-center {
   text-align: center;
 }
 
-.clear {
-  clear: both;
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  margin-left: -5px;
 }
 
-.spacer {
-  height: 20px;
+.list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .small {
   font-size: 0.8em;
-}
-
-.disclaimer {
-  color: #666;
-  padding: 20px;
 }
 
 .media {
@@ -109,6 +108,16 @@ a {
 
 .media li > a {
   text-decoration: none;
+}
+
+.spacer-2x {
+  margin-top: 53px;
+}
+
+.footer {
+  color: #757575;
+  float: left;
+  padding: 20px;
 }
 
 /* hljs override */
