@@ -13,17 +13,13 @@ if [ $V == "14.04.1" ]; then
 fi
 
 # Minimum verision check
-MIN=`echo $V'<'12.10 | bc -l`
+MIN=`echo $V'>'12.10 | bc -l`
 
 # Maximum version check
 FIXED_VER=15.04
 MAX=`echo $FIXED_VER'>'$V | bc -l`
-if [[ $MIN -eq 0 && $MAX -eq 0 ]]; then 
-  echo "Good news! This version of Ubuntu is not known to invade your privacy."
-  exit 0 #Script should exit if ubuntu version outside range
-fi
 
-if [[ $V == "$FIXED_VER" ]]; then
+if [[ $MIN -eq 0 || $MAX -eq 0 ]]; then 
   echo "Good news! This version of Ubuntu is not known to invade your privacy."
   exit 0 #Script should exit if ubuntu version outside range
 fi
