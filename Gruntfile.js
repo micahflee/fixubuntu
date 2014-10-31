@@ -12,7 +12,7 @@ module.exports = function(grunt) {
           { src: '*.html', dest: 'dist/' },
           { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'] },
           { dest: 'dist/', src: 'assets/fonts/**' },
-          { dest: 'dist/', src: 'assets/img/**' }
+          { dest: 'dist/', src: 'assets/img/*' }
         ]
       }
     },
