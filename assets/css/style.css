@@ -15,14 +15,14 @@ body {
   font: 16px/1.5em 'ubunturegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-h1 {
+.logo {
   font-size: 85px;
   line-height: 100%;
   margin: 0;
 }
 
-h1:after {
-  background: url('../img/ubuntu.png') right top no-repeat;
+.logo:after {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAACkVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAABAQH+/v5+fn55eXmDg4MTExO6urrn5+ezs7MyMjKdnZ2ioqKfn58ICAgCAgK5ubm/v798fHwJCQlzc3Ps7OwWFhYGBgb39/c1NTW8vLywsLC1tbX29vakpKRsbGw6OjqhoaEpKSl1dXXu7u7Dw8MrKyuurq4ODg7CwsIXFxePj4+pqamBgYEjIyP7+/uvr68YGBh0dHSZmZm0tLTi4uI/Pz9CQkILCwvAwMBxcXGLi4u9vb0UFBSenp4QEBAKCgqKiord3d3V1dWGhoYoKCjp6emRkZFvb2+VlZVmZmbj4+Onp6eYmJgPDw+bm5sdHR1bW1vy8vJ9fX12dna3t7d4eHhDQ0NWVla7u7ujo6MDAwOsrKzc3Nz6+vqqqqrg4OAHBwceHh6SkpItLS3S0tIwMDASEhIFBQWrq6vT09NoaGj9/f0xMTFZWVmoqKhnZ2cqKiqgoKBYWFj8/PwuLi6Ojo43NzfPz8/R0dGmpqYNDQ35+fltbW3BwcEEBAQiIiK+vr5fu/n6AAAAWHRSTlMAAP4Bl6fw4cgRqNgor2DNeQXxyviwquwLtI75lqx+bhPc9kL0mcYGD3v7nUHSy+PHAnJOpvpwGqkloEekT4AD5EnJgQfZohxDntrW0ExIrSaC8nO74LpxYqn11gAAAtVJREFUeAGN1uV220AQBeC1HWjKzMzMzMyM98ppU0jSlCFtUmZmZmZmZmZGeJruOvGuZFtuv78695yZkTS7IlyBhjElcsXVbBKXq0TppgXEP3hEQtmCcIirUV14ogRy50EERVu4hXzCBEKUkQ8j6QAvXHjRKlJRrRFVjPCEJvLBxSpkqWrPqEQXRHYrjWNnIKCOM1PXpY2ZVP4goL6wqQUXb6i8Q5bSZrq1EWrLiuHDRywAHlEZg2yV9KzhcHPnSmbDS4vSVmQrFWynMRxuU1uesZhkkt82asXTDHb30/GM2uTnH4/eg02CUFrCmJ9knYSfxrJRuHEWmjdWSNVgs4bkCOznxdT1M5PnMctS2Ki6ysGYbVEahaBXUy1Km2C0lZl60DKpvMiA8ZDKIjOAHM4JT6T0CQ4LLZJTYTQQeaGlUtrshxOVVGiNREloCyldhZM/hdIlaPlFTgQsGQ/ctUgijEUJWnNRCID/wWOSTzNIzkKY15QWIKiCiNd9E5PIFIRJpHQCQZVFMQAjGTAjlRyPfykciIxjwOo5/xeJhzSWCtaSV10KW2crrBCkz5S+fCf5w6X9n6b94JDTRwK/SaYhTBolaEXtr3Iupa9w8meGfJj57R9MMqVvCEElGVobIWDcoTQbDh8skr9gtBOiPbS3VKa/hzGGyhM/gjqG/GLTLUobELRookXS2gijkxCiMwz/FJITsI2JKdvT50xglh2wEUpXGJN3WbsBGnv2Yt98aN6cQvJ0g92BcZhF7SAOHT4Cm/IiINYLu2PUjk9TG3YKtCouC/bUaWbDGYvSpLAF66uEUKPPzTufeAFIcq7x7uaE6QEXc6lcNhvZyIfIRlO5oleY4RE9vYgok7x2HYq3V+hh2Rsupuk1GXYkxyKqKiZh9Il2VegrIvH5isBFP+FzvfZEDJXpH/WuVH7AQDgULJvgFjCKD4oZHF8RqDhkaMyw4iLMX8iMvvGwxPzqAAAAAElFTkSuQmCC');
   content: '';
   display: inline-block;
   margin-left: 20px;
@@ -116,12 +116,12 @@ a {
 }
 
 @media (max-width: 665px) {
-  h1 {
+  .logo {
     font-size: 45px;
     min-height: 50px;
   }
 
-  h1:after {
+  .logo:after {
     vertical-align: middle;
   }
 
