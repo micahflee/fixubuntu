@@ -12,7 +12,7 @@ if [ $V == "14.04.1" ]; then
   $V=14.04
 fi
 
-# Minimum verision check
+# Minimum version check
 MIN=`echo $V'>'12.10 | bc -l`
 
 # Maximum version check
