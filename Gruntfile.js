@@ -44,14 +44,14 @@ module.exports = function(grunt) {
 
     uncss: {
       options: {
-        htmlroot: "dist",
+        htmlroot: 'dist',
         ignore: [
           /(#|\.)hljs(\-[a-zA-Z]+)?/
         ]
       },
       dist: {
-        src: "dist/**/*.html",
-        dest: "<%= concat.css.dest %>"
+        src: 'dist/**/*.html',
+        dest: '<%= concat.css.dest %>'
       }
     },
 
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         src: 'dist/assets/css/**/{,*/}*.css'
       },
       fonts: {
-        src: 'dist/assets/fonts/**/*.{eot,svg,ttf,woff}'
+        src: 'dist/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}'
       },
       images: {
         src: ['dist/assets/img/**/*.{jpg,jpeg,gif,png}', '!dist/assets/img/opg.png']
@@ -126,19 +126,24 @@ module.exports = function(grunt) {
 
     watch: {
       options: {
-        livereload: true
+        livereload: '<%= connect.options.livereload %>'
       },
       files: ['assets/**/*', 'index.html', 'fixubuntu.sh', 'Gruntfile.js'],
       tasks: 'build'
     },
 
     connect: {
-      server: {
         options: {
-          base: 'dist/',
-          port: 4000
+            hostname: 'localhost',
+            livereload: 35729,
+            port: 4000
+        },
+        livereload: {
+            options: {
+                base: 'dist/',
+                open: true  // Automatically open the webpage in the default browser
+            }
         }
-      }
     },
 
     validation: {
