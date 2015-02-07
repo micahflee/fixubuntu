@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata></metadata>
 <defs>
 <font id="ubunturegular" horiz-adv-x="1155" >
@@ -240,7 +240,7 @@
 <glyph unicode="&#x205f;" horiz-adv-x="477" />
 <glyph unicode="&#x20ac;" d="M92 465v147h168q-2 23 -2 47.5v51.5v55.5t2 52.5h-168v148h189q47 240 186 359.5t356 119.5q90 0 149.5 -11.5t119.5 -29.5l-41 -164q-49 18 -107.5 29.5t-120.5 11.5q-78 0 -136 -22.5t-100 -63.5t-68.5 -99.5t-41.5 -129.5h477l-28 -148h-469q-2 -27 -2 -53.5v-54.5 v-51.5t2 -47.5h428l-29 -147h-383q35 -182 126 -254t228 -72q86 0 148.5 16.5t111.5 39.5l41 -162q-35 -18 -120.5 -39t-190.5 -21q-240 0 -371 130t-170 362h-184z" />
 <glyph unicode="&#x2122;" horiz-adv-x="1554" d="M47 1294v125h571v-125h-215v-557h-141v557h-215zM647 737q16 252 28.5 415t29.5 267h135q16 -35 40.5 -84t53.5 -106.5t58.5 -116.5t58.5 -115q27 55 57.5 114.5t59 117t53 106.5t41.5 84h135q16 -104 28.5 -267t28.5 -415h-143q-2 51 -4 109.5t-5.5 117t-7.5 116 t-8 106.5q-23 -39 -49.5 -91.5t-52 -103.5t-49 -96t-35.5 -72h-101q-12 27 -35.5 72t-49 96t-53 103.5t-48.5 91.5q-4 -49 -8 -106.5t-7 -116t-5 -117t-5 -109.5h-141z" />
-<glyph unicode="&#xe000;" horiz-adv-x="1064" d="M0 0v1065h1065v-1065h-1065z" />
+<glyph unicode="&#x25fc;" horiz-adv-x="1064" d="M0 0v1065h1065v-1065h-1065z" />
 <hkern u1="K" u2="&#xef;" k="-43" />
 <hkern u1="T" u2="&#xef;" k="-63" />
 <hkern u1="T" u2="&#xee;" k="-43" />
@@ -253,6 +253,16 @@
 <hkern u1="f" u2="&#xec;" k="-61" />
 <hkern u1="&#xdd;" u2="&#xef;" k="-84" />
 <hkern u1="&#x178;" u2="&#xef;" k="-84" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="v" 	k="31" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="w" 	k="25" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="y,yacute,ydieresis" 	k="31" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="quotedbl,quotesingle" 	k="55" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="parenright" 	k="49" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="asterisk" 	k="41" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="question" 	k="57" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="bracketright" 	k="61" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="braceright" 	k="43" />
+<hkern g1="a,agrave,aacute,acircumflex,atilde,adieresis,aring" 	g2="quoteright,quotedblright" 	k="49" />
 <hkern g1="b" 	g2="v" 	k="27" />
 <hkern g1="b" 	g2="w" 	k="25" />
 <hkern g1="b" 	g2="y,yacute,ydieresis" 	k="27" />
@@ -930,6 +940,30 @@
 <hkern g1="V" 	g2="A,Agrave,Aacute,Acircumflex,Atilde,Adieresis,Aring" 	k="127" />
 <hkern g1="V" 	g2="J" 	k="195" />
 <hkern g1="V" 	g2="M" 	k="12" />
+<hkern g1="V" 	g2="u,ugrave,uacute,ucircumflex,udieresis" 	k="49" />
+<hkern g1="V" 	g2="z" 	k="4" />
+<hkern g1="V" 	g2="AE" 	k="168" />
+<hkern g1="V" 	g2="parenleft" 	k="68" />
+<hkern g1="V" 	g2="hyphen,endash,emdash" 	k="20" />
+<hkern g1="V" 	g2="slash" 	k="137" />
+<hkern g1="V" 	g2="colon,semicolon" 	k="41" />
+<hkern g1="V" 	g2="at" 	k="78" />
+<hkern g1="V" 	g2="bracketright" 	k="57" />
+<hkern g1="V" 	g2="braceleft" 	k="49" />
+<hkern g1="V" 	g2="quotesinglbase,quotedblbase" 	k="152" />
+<hkern g1="V" 	g2="guillemotleft,guilsinglleft" 	k="88" />
+<hkern g1="V" 	g2="guillemotright,guilsinglright" 	k="23" />
+<hkern g1="V" 	g2="eth" 	k="104" />
+<hkern g1="V" 	g2="quotedbl,quotesingle" 	k="-29" />
+<hkern g1="V" 	g2="parenright" 	k="-33" />
+<hkern g1="V" 	g2="question" 	k="-49" />
+<hkern g1="V" 	g2="quoteleft,quotedblleft" 	k="-39" />
+<hkern g1="V" 	g2="quoteright,quotedblright" 	k="-49" />
+<hkern g1="V" 	g2="T" 	k="-57" />
+<hkern g1="V" 	g2="V" 	k="-63" />
+<hkern g1="V" 	g2="W" 	k="-43" />
+<hkern g1="V" 	g2="X" 	k="-39" />
+<hkern g1="V" 	g2="Y,Yacute,Ydieresis" 	k="-68" />
 <hkern g1="W" 	g2="u,ugrave,uacute,ucircumflex,udieresis" 	k="39" />
 <hkern g1="W" 	g2="AE" 	k="100" />
 <hkern g1="W" 	g2="parenleft" 	k="33" />
