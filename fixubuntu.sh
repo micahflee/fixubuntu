@@ -56,6 +56,6 @@ if ! grep -q "127.0.0.1 productsearch.ubuntu.com" /etc/hosts; then
 fi
 # Editing /etc/hosts is OK, but adding an iptables rule seems to be
 # a more elegant solution
-sudo iptables -A OUTPUT -d 91.189.92.11 -j DROP
+sudo iptables -A OUTPUT -d 91.189.92.11 -j REJECT
 
 echo "All done. Enjoy your privacy."
