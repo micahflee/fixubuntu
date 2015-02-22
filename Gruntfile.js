@@ -9,10 +9,10 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: [
-          { src: '*.html', dest: 'dist/' },
-          { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'] },
-          { dest: 'dist/', src: 'assets/fonts/**' },
-          { dest: 'dist/', src: 'assets/img/*' }
+          { src: '*.html', dest: 'dist/', expand: true },
+          { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'], expand: true },
+          { dest: 'dist/', src: 'assets/fonts/*', expand: true },
+          { dest: 'dist/', src: 'assets/img/*', expand: true }
         ]
       }
     },
