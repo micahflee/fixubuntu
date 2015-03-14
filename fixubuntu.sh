@@ -38,7 +38,7 @@ fi
 $GS set "$CCUL" remote-content-search none
 
 # If you're using a version earlier than v13.10, uninstall unity-lens-shopping
-if [[ $V < 13.10 ]]; then
+if [[ $(echo $V'<'13.10 | bc) ]]; then
   sudo apt-get remove -y unity-lens-shopping
 
 # If you're using a later version, disable remote scopes
