@@ -8,7 +8,7 @@ V=$(/usr/bin/lsb_release -rs)
 # The privacy problems started with v12.10, so earlier versions should do nothing
 
 # Added check because 14.04.1 isn't a number
-if [ $V == "14.04.1" ]; then
+if [ "$V" == "14.04.1" ]; then
   $V=14.04
 fi
 
