@@ -7,10 +7,8 @@ CCUL="com.canonical.Unity.lenses"
 V=$(/usr/bin/lsb_release -rs)
 # The privacy problems started with v12.10, so earlier versions should do nothing
 
-# Added check because 14.04.1 isn't a number
-if [ $V == "14.04.1" ]; then
-  $V=14.04
-fi
+# 14.04.1 and 14.04.02 aren't numbers, chop them to 14.04
+V=$(echo "$V" | cut -d. -f1-2)
 
 # Minimum version check
 MIN=`echo $V'>'12.10 | bc -l`
