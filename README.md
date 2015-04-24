@@ -4,12 +4,12 @@
 
 This is the code that powers <https://fixubuntu.com/>.
 
-Copyright 2013-2014 Micah Lee, and licensed under AGPLv3. See [LICENSE](/LICENSE) for more info.
+Copyright 2013-2015 Micah Lee, and licensed under AGPLv3. See [LICENSE](/LICENSE) for more info.
 
 
 ## Developing
 
-* Install [Node.js](http://nodejs.org/download/)
+* Install [Node.js](https://nodejs.org/download/)
 * Install Grunt: `npm install -g grunt-cli`
 * Install the Node.js dependencies: `cd fixubuntu && npm install`
 * Run `grunt build` to build the static site,

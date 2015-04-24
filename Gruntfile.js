@@ -20,7 +20,6 @@ module.exports = function(grunt) {
     concat: {
       css: {
         src: ['assets/css/normalize.css',
-              'assets/css/monokai.css',
               'assets/css/style.css'],
         dest: 'dist/assets/css/pack.css'
       },
@@ -28,9 +27,6 @@ module.exports = function(grunt) {
 
     uncss: {
       options: {
-        ignore: [
-          /(#|\.)hljs(\-[a-zA-Z]+)?/
-        ],
         htmlroot: 'dist',
         stylesheets: ['/assets/css/pack.css']
       },
@@ -42,7 +38,7 @@ module.exports = function(grunt) {
 
     cssmin: {
       options: {
-        compatibility: 'ie8',
+        compatibility: 'ie9',
         keepSpecialComments: 0
       },
       dist: {
