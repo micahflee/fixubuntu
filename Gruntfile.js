@@ -181,7 +181,7 @@ module.exports = function(grunt) {
     'filerev',
     'usemin',
     'connect',
-    'watch:build'
+    'watch:dev'
   ]);
 
   grunt.registerTask('test', [
