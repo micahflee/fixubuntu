@@ -144,7 +144,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean',
     'copy',
-    'replace',
     'useminPrepare',
     'concat',
     'uncss',
