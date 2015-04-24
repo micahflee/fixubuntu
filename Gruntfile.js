@@ -10,21 +10,10 @@ module.exports = function(grunt) {
       dist: {
         files: [
           { src: '*.html', dest: 'dist/', expand: true },
-          { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'], expand: true },
+          { dest: 'dist/', src: ['.htaccess', 'favicon.ico'], expand: true },
           { dest: 'dist/', src: 'assets/fonts/*', expand: true },
           { dest: 'dist/', src: 'assets/img/*', expand: true }
         ]
-      }
-    },
-
-    replace: {
-      insert_script: {
-        src: ['dist/index.html'],
-        overwrite: true,
-        replacements: [{
-          from: '{{FIXUBUNTU_SCRIPT}}',
-          to: '<%- grunt.file.read("dist/fixubuntu.sh") %>'
-        }]
       }
     },
 
@@ -35,11 +24,6 @@ module.exports = function(grunt) {
               'assets/css/style.css'],
         dest: 'dist/assets/css/pack.css'
       },
-      js: {
-        src: ['assets/js/plugins.js',
-              'assets/js/highlight.pack.js'],
-        dest: 'dist/assets/js/pack.js'
-      }
     },
 
     uncss: {
@@ -68,21 +52,6 @@ module.exports = function(grunt) {
       }
     },
 
-    uglify: {
-      options: {
-        compress: {
-          warnings: false
-        },
-        mangle: true,
-        preserveComments: false
-      },
-      dist: {
-        files: {
-          '<%= concat.js.dest %>': '<%= concat.js.dest %>'
-        }
-      }
-    },
-
     htmlmin: {
       dist: {
         options: {
@@ -107,9 +76,6 @@ module.exports = function(grunt) {
       images: {
         src: ['dist/assets/img/**/*.{jpg,jpeg,gif,png}', '!dist/assets/img/opg.png']
       },
-      js: {
-        src: 'dist/assets/js/**/{,*/}*.js'
-      }
     },
 
     useminPrepare: {
@@ -130,11 +96,11 @@ module.exports = function(grunt) {
         livereload: '<%= connect.options.livereload %>'
       },
       dev: {
-        files: ['assets/**/*', 'index.html', 'fixubuntu.sh', 'Gruntfile.js'],
+        files: ['assets/**/*', 'index.html', 'Gruntfile.js'],
         tasks: 'dev'
       },
       build: {
-        files: ['assets/**/*', 'index.html', 'fixubuntu.sh', 'Gruntfile.js'],
+        files: ['assets/**/*', 'index.html', 'Gruntfile.js'],
         tasks: 'build'
       }
     },
@@ -183,7 +149,6 @@ module.exports = function(grunt) {
     'concat',
     'uncss',
     'cssmin',
-    'uglify',
     'filerev',
     'usemin',
     'htmlmin'
@@ -192,7 +157,6 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', [
     'clean',
     'copy',
-    'replace',
     'useminPrepare',
     'concat',
     'filerev',
