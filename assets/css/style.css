@@ -65,8 +65,16 @@ a {
   float: left;
   margin: 0 2%;
 }
+
 .left img {
+  display: block;
   max-width: 100%;
+  height: auto;
+}
+
+p > span {
+  font-weight: bold;
+  font-size: 115%;
 }
 
 .right {
