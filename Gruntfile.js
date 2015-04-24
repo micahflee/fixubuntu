@@ -9,10 +9,10 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: [
-          { src: '*.html', dest: 'dist/' },
-          { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'] },
-          { dest: 'dist/', src: 'assets/fonts/**' },
-          { dest: 'dist/', src: 'assets/img/*' }
+          { src: '*.html', dest: 'dist/', expand: true },
+          { dest: 'dist/', src: ['.htaccess', 'favicon.ico', 'fixubuntu.sh'], expand: true },
+          { dest: 'dist/', src: 'assets/fonts/*', expand: true },
+          { dest: 'dist/', src: 'assets/img/*', expand: true }
         ]
       }
     },
@@ -44,10 +44,11 @@ module.exports = function(grunt) {
 
     uncss: {
       options: {
-        htmlroot: 'dist',
         ignore: [
           /(#|\.)hljs(\-[a-zA-Z]+)?/
-        ]
+        ],
+        htmlroot: 'dist',
+        stylesheets: ['/assets/css/pack.css']
       },
       dist: {
         src: 'dist/**/*.html',
@@ -128,8 +129,14 @@ module.exports = function(grunt) {
       options: {
         livereload: '<%= connect.options.livereload %>'
       },
-      files: ['assets/**/*', 'index.html', 'fixubuntu.sh', 'Gruntfile.js'],
-      tasks: 'build'
+      dev: {
+        files: ['assets/**/*', 'index.html', 'fixubuntu.sh', 'Gruntfile.js'],
+        tasks: 'dev'
+      },
+      build: {
+        files: ['assets/**/*', 'index.html', 'fixubuntu.sh', 'Gruntfile.js'],
+        tasks: 'build'
+      }
     },
 
     connect: {
@@ -182,15 +189,31 @@ module.exports = function(grunt) {
     'htmlmin'
   ]);
 
+  grunt.registerTask('dev', [
+    'clean',
+    'copy',
+    'replace',
+    'useminPrepare',
+    'concat',
+    'filerev',
+    'usemin',
+    'connect',
+    'watch:build'
+  ]);
+
   grunt.registerTask('test', [
     'build',
     'validation'
   ]);
 
   grunt.registerTask('default', [
+    'server'
+  ]);
+
+  grunt.registerTask('server', [
     'build',
     'connect',
-    'watch'
+    'watch:build'
   ]);
 
 };
