@@ -23,6 +23,12 @@ module.exports = function(grunt) {
               'assets/css/style.css'],
         dest: 'dist/assets/css/pack.css'
       },
+      js: {
+        src: ['assets/js/requestAnimFrame-shim.js',
+              'assets/js/layzr.js',
+              'assets/js/plugins.js'],
+        dest: 'dist/assets/js/pack.js'
+      }
     },
 
     uncss: {
@@ -44,6 +50,21 @@ module.exports = function(grunt) {
       dist: {
         files: {
           '<%= concat.css.dest %>': '<%= concat.css.dest %>'
+        }
+      }
+    },
+
+    uglify: {
+      options: {
+        compress: {
+          warnings: false
+        },
+        mangle: true,
+        preserveComments: false
+      },
+      dist: {
+        files: {
+          '<%= concat.js.dest %>': '<%= concat.js.dest %>'
         }
       }
     },
@@ -72,6 +93,9 @@ module.exports = function(grunt) {
       images: {
         src: ['dist/assets/img/**/*.{jpg,jpeg,gif,png}', '!dist/assets/img/opg.png']
       },
+      js: {
+        src: 'dist/assets/js/**/{,*/}*.js'
+      }
     },
 
     useminPrepare: {
@@ -144,6 +168,7 @@ module.exports = function(grunt) {
     'concat',
     'uncss',
     'cssmin',
+    'uglify',
     'filerev',
     'usemin',
     'htmlmin'
