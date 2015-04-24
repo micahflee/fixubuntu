@@ -36,7 +36,6 @@ body {
   content: '';
   display: inline-block;
   margin-right: 20px;
-  vertical-align: middle;
   width: 70px;
   height: 70px;
 }
@@ -46,7 +45,7 @@ body {
   font-weight: bold;
   font-size: 20px;
   line-height: 30px;
-  color: #000000;
+  color: black;
   margin: 20px 50px;
 }
 
