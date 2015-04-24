@@ -12,9 +12,14 @@
 }
 
 body {
-  background-image: url('../img/background.png');
-  background-position: top left;
-  background-color: #ffffff;
+  background-color: #f6f8f9;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f6f8f9), color-stop(50%, #e5ebee), color-stop(51%, #d7dee3), color-stop(100%, #f5f7f9));
+  background-image: -webkit-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  background-image: -moz-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  background-image: -ms-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  background-image: -o-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  background-image: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 );
   color: #66595C;
   font: normal normal 16px/1.5em 'ubunturegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -31,7 +36,6 @@ body {
   content: '';
   display: inline-block;
   margin-right: 20px;
-  vertical-align: middle;
   width: 70px;
   height: 70px;
 }
@@ -41,7 +45,7 @@ body {
   font-weight: bold;
   font-size: 20px;
   line-height: 30px;
-  color: #000000;
+  color: black;
   margin: 20px 50px;
 }
 
@@ -65,8 +69,16 @@ a {
   float: left;
   margin: 0 2%;
 }
+
 .left img {
+  display: block;
   max-width: 100%;
+  height: auto;
+}
+
+p > span {
+  font-weight: bold;
+  font-size: 115%;
 }
 
 .right {
