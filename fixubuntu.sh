@@ -8,16 +8,16 @@ V=$(/usr/bin/lsb_release -rs)
 # The privacy problems started with v12.10, so earlier versions should do nothing
 
 # Added check because 14.04.1 isn't a number
-if [ $V == "14.04.1" ]; then
+if [ "$V" == "14.04.1" ]; then
   $V=14.04
 fi
 
 # Minimum version check
-MIN=`echo $V'>'12.10 | bc -l`
+MIN=$(echo $V'>'12.10 | bc -l)
 
 # Maximum version check
 FIXED_VER=15.04
-MAX=`echo $FIXED_VER'>'$V | bc -l`
+MAX=$(echo $FIXED_VER'>'$V | bc -l)
 
 if [[ $MIN -eq 0 || $MAX -eq 0 ]]; then 
   echo "Good news! This version of Ubuntu is not known to invade your privacy."
@@ -38,7 +38,7 @@ fi
 $GS set "$CCUL" remote-content-search none
 
 # If you're using a version earlier than v13.10, uninstall unity-lens-shopping
-if [[ $V < 13.10 ]]; then
+if [[ $(echo $V'<'13.10 | bc) ]]; then
   sudo apt-get remove -y unity-lens-shopping
 
 # If you're using a later version, disable remote scopes
