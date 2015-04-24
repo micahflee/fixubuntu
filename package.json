@@ -38,7 +38,8 @@
     "grunt-uncss": "~0.4.2",
     "grunt-usemin": "~3.0.0",
     "load-grunt-tasks": "~3.1.0",
-    "time-grunt": "~1.1.1"
+    "time-grunt": "~1.1.1",
+    "lodash": "~2.4.1"
   },
   "engines": {
     "node": ">=0.10.0"
