@@ -24,8 +24,7 @@ module.exports = function(grunt) {
         dest: 'dist/assets/css/pack.css'
       },
       js: {
-        src: ['assets/js/requestAnimFrame-shim.js',
-              'assets/js/layzr.js',
+        src: ['assets/js/lazyload.js',
               'assets/js/plugins.js'],
         dest: 'dist/assets/js/pack.js'
       }
